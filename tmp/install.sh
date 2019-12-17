@@ -27,6 +27,6 @@ chmod +x /bin/JSON.sh
 
 /etc/init.d/unblock start
 
-curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/ndm/netfilter.d/100-redirect.sh
+curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/tmp/100-redirect.sh
 
 chmod +x /tmp/100-redirect.sh
