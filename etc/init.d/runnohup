@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[ "$1" != "start" ] && exit 0
+
+echo "$(ndmq -p 'show interface' -x | xmlstarlet sel -t -m '//interface[link="up"][state="up"][global="yes"][defaultgw="yes"]' -v 'address' -n)" >/tmp/previp.txt
+
+nohup rtor.sh start &>/dev/null &
+nohup tgbot.sh start &>/dev/null &
