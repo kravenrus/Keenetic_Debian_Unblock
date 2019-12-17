@@ -14,7 +14,7 @@ TIMEOUT='&timeout=10' # Интервал обработки обновлений
 
 if [ "$1" == "start" ]; then
 
-MSG="<b>\[TGBOT\]</b> Данный Telegram Bot был запущен.%0A==================================%0AВозможно роутер был перезапущен, но это не точно."
+MSG="<b>\[TGBOT\]</b> Telegram Bot был запущен.%0A<i>Возможно роутер был перезагружен, но это не точно.</i>"
 
 curl -m 600 --socks5 127.0.0.1:9050 -k -s -X POST "$MSG_URL&parse_mode=html&text=$MSG" &>/dev/null # Отправка сообщения ботом при запуске
 
@@ -38,7 +38,7 @@ while true; do {
 			'/ip') MSG="<b>\[TGBOT\]</b> На данный момент%0A<i>IP адрес: $(ndmq -p 'show interface' -x | xmlstarlet sel -t -m '//interface[link="up"][state="up"][global="yes"][defaultgw="yes"]' -v 'address' -n)</i>";;
 			
 			'/update') ndmq -p "interface ISP ip dhcp client release" && sleep 10 &&
-			ndmq -p "interface ISP ip dhcp client release" && /etc/init.d/tor restart &&
+			ndmq -p "interface ISP ip dhcp client release" && sleep 60 && echo "$(ndmq -p 'show interface' -x | xmlstarlet sel -t -m '//interface[link="up"][state="up"][global="yes"][defaultgw="yes"]' -v 'address' -n)" >/tmp/previp.txt && /etc/init.d/tor restart &&
 			MSG="<b>\[TGBOT\]</b> IP адрес успешно изменен!%0AСервис Tor был перезапущен.%0A<i>Теперь ваш IP: $(ndmq -p 'show interface' -x | xmlstarlet sel -t -m '//interface[link="up"][state="up"][global="yes"][defaultgw="yes"]' -v 'address' -n)</i>";;
 			
 			'/services') MSG="<b>\[TGBOT\]</b> Информация о доступе%0A==================================%0AНа роутере настроен DDNS, доступ к сервисам можно получить через DNS или IP адрес. Поскольку DDNS может быть не обновлен, доступ к сервисам окажется закрытым. В данной ситации предпочтительно подключение по IP адресу.%0A---------------------------------------------------------------------%0A/services_ip - список IP%0A/services_ddns - список DDNS";;
