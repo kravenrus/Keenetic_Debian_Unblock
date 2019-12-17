@@ -38,7 +38,7 @@ curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com
 
 chmod +x /tmp/100-redirect.sh
 ```
-** The steps described above can be automated. To do this, download the installation script, give execute rights and run:**
+**The steps described above can be automated. To do this, download the installation script, give execute rights and run:**
 ```
 curl --output /tmp/install.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/tmp/install.sh
 
