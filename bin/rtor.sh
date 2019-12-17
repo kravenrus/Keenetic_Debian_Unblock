@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ "$1" != "start" ] && exit 0
+
 COUNT=0
 
 while true; do {

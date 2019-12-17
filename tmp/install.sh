@@ -1,15 +1,10 @@
-# Keenetic_Debian_Unblock
+#!/bin/bash
 
-## Installation
+[ "$1" != "start" ] && exit 0
 
-* Install [Debian](http://ndm.zyxmon.org/binaries/debian/),
-* Install necessary dependencies:
-```
 apt update
 apt install mc xmlstarlet cron net-tools curl ipset iptables dnsutils dnsmasq tor tor-geoipdb
-```
-* Download binaries and start script:
-```
+
 cat /dev/null > /etc/tor/torrc
 cat /dev/null > /etc/dnsmasq.conf
 cat /dev/null > /chroot-services.list
@@ -31,33 +26,7 @@ chmod +x /bin/tgbot.sh
 chmod +x /bin/JSON.sh
 
 /etc/init.d/unblock start
-```
-* Download the redirect script, give permission to execute:
-```
-curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/tmp/100-redirect.sh
+
+curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/ndm/netfilter.d/100-redirect.sh
 
 chmod +x /tmp/100-redirect.sh
-```
-**[VERY IMPORTANT] Transfer this file to the /opt/etc/ndm/netfilter.d folder. This path is outside of Debian, so use FTP or SMB to migrate.**
-*** The steps described above can be automated. To do this, download the installation script, give execute rights and run:
-```
-curl --output /tmp/install.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/tmp/install.sh
-
-chmod +x /tmp/install.sh
-
-/tmp/install.sh start
-```
-* Connect to the CLI via SSH and run the following commands:
-```
-opkg dns-override
-system configuration save
-system reboot
-```
-* To use only the integrated DNS server, enter:
-```
-opkg no dns-override
-system configuration save
-system reboot
-```
-
-Have fun!
