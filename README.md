@@ -10,6 +10,9 @@ apt install mc xmlstarlet cron net-tools curl ipset iptables dnsutils dnsmasq to
 ```
 * Download binaries and start script:
 ```
+cat /dev/null > /etc/tor/torrc
+cat /dev/null > /etc/dnsmasq.conf
+
 curl --output /etc/tor/torrc  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/etc/tor/torrc
 curl --output /etc/dnsmasq.conf  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/etc/dnsmasq.conf
 curl --output /etc/unblock.txt  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/etc/unblock.txt
