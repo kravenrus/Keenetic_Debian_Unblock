@@ -50,15 +50,15 @@ chmod +x /tmp/install.sh
 **[VERY IMPORTANT] Transfer this file to the /opt/etc/ndm/netfilter.d folder. This path is outside of Debian, so use FTP or SMB to migrate.**
 * Connect to the CLI via SSH and run the following commands:
 ```
-opkg dns-override
-system configuration save
-system reboot
+ndmq -p "opkg dns-override"
+ndmq -p "system configuration save"
+ndmq -p "system reboot"
 ```
 * To use only the integrated DNS server, enter:
 ```
-opkg no dns-override
-system configuration save
-system reboot
+ndmq -p "opkg no dns-override"
+ndmq -p "system configuration save"
+ndmq -p "system reboot"
 ```
 
 Have fun!
