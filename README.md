@@ -22,7 +22,7 @@ chmod +x /bin/rtor.sh
 
 /etc/init.d/unblock start
 ```
-* Download the redirect script, give permission to execute.
+* Download the redirect script, give permission to execute:
 ```
 curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/ndm/netfilter.d/100-redirect.sh
 
