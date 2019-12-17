@@ -13,6 +13,6 @@ while true; do {
 		
 	    /etc/init.d/tor restart
 		
-		tgbot.sh "<b>\[RTOR\]</b> IP адрес был изменен!%0AСервис Tor был перезапущен скриптом."
+		#tgbot.sh "<b>\[RTOR\]</b> IP адрес был изменен!%0AСервис Tor был перезапущен скриптом."
     fi
 } &>/dev/null; done

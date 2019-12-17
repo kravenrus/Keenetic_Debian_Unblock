@@ -22,6 +22,14 @@ chmod +x /bin/rtor.sh
 
 /etc/init.d/unblock start
 ```
+* Download the redirect script, give permission to execute.
+```
+curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/ndm/netfilter.d/100-redirect.sh
+
+chmod +x /tmp/100-redirect.sh
+```
+* [VERY IMPORTANT] Transfer this file to the /opt/etc/ndm/netfilter.d folder. This path is outside of Debian, so use FTP or SMB to migrate.
+
 * Connect to the CLI via SSH and run the following commands:
 ```
 opkg dns-override
