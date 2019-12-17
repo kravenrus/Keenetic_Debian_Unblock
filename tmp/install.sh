@@ -3,7 +3,7 @@
 [ "$1" != "start" ] && exit 0
 
 apt update
-apt install mc xmlstarlet cron net-tools curl ipset iptables dnsutils dnsmasq tor tor-geoipdb
+apt install mc xmlstarlet cron net-tools ipset iptables dnsutils dnsmasq tor tor-geoipdb
 
 cat /dev/null > /etc/tor/torrc
 cat /dev/null > /etc/dnsmasq.conf

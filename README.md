@@ -40,10 +40,11 @@ chmod +x /tmp/100-redirect.sh
 ```
 **The steps described above can be automated. To do this, download the installation script, give execute rights and run:**
 ```
+apt update
+apt install curl
+
 curl --output /tmp/install.sh  --insecure https://raw.githubusercontent.com/kravenrus/Keenetic_Debian_Unblock/master/tmp/install.sh
-
 chmod +x /tmp/install.sh
-
 /tmp/install.sh start
 ```
 **[VERY IMPORTANT] Transfer this file to the /opt/etc/ndm/netfilter.d folder. This path is outside of Debian, so use FTP or SMB to migrate.**
