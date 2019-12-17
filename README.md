@@ -28,7 +28,7 @@ curl --output /tmp/100-redirect.sh  --insecure https://raw.githubusercontent.com
 
 chmod +x /tmp/100-redirect.sh
 ```
-* [VERY IMPORTANT] Transfer this file to the /opt/etc/ndm/netfilter.d folder. This path is outside of Debian, so use FTP or SMB to migrate.
+**[VERY IMPORTANT] Transfer this file to the /opt/etc/ndm/netfilter.d folder. This path is outside of Debian, so use FTP or SMB to migrate.**
 
 * Connect to the CLI via SSH and run the following commands:
 ```
